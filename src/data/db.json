@@ -1,0 +1,179 @@
+{
+  "categorias": [
+    {
+      "nombre": "Pizzas",
+      "productos": [
+        {
+          "id": 1,
+          "nombre": "Margherita",
+          "descripcion": "Salsa de tomate, mozzarella fresca y albahaca",
+          "precio": 12.50
+        },
+        {
+          "id": 2,
+          "nombre": "Pepperoni",
+          "descripcion": "Salsa de tomate, mozzarella y pepperoni picante",
+          "precio": 14.75
+        },
+        {
+          "id": 3,
+          "nombre": "Cuatro Quesos",
+          "descripcion": "Mezcla de mozzarella, gorgonzola, parmesano y fontina",
+          "precio": 16.00
+        },
+        {
+          "id": 4,
+          "nombre": "Hawaiana",
+          "descripcion": "Jamón, piña y mozzarella",
+          "precio": 15.25
+        },
+        {
+          "id": 5,
+          "nombre": "Vegetariana",
+          "descripcion": "Verduras frescas de temporada y mozzarella",
+          "precio": 13.90
+        }
+      ]
+    },
+    {
+      "nombre": "Hamburguesas",
+      "productos": [
+        {
+          "id": 6,
+          "nombre": "Clásica",
+          "descripcion": "Carne de res, lechuga, tomate y salsa especial",
+          "precio": 9.50
+        },
+        {
+          "id": 7,
+          "nombre": "Doble Queso",
+          "descripcion": "Doble carne, doble queso cheddar y bacon",
+          "precio": 12.75
+        },
+        {
+          "id": 8,
+          "nombre": "Pollo Crispy",
+          "descripcion": "Pollo empanado, lechuga y mayonesa de ajo",
+          "precio": 10.25
+        },
+        {
+          "id": 9,
+          "nombre": "Vegetariana",
+          "descripcion": "Hamburguesa de lentejas y vegetales",
+          "precio": 11.00
+        },
+        {
+          "id": 10,
+          "nombre": "BBQ",
+          "descripcion": "Carne de res con salsa barbacoa y aros de cebolla",
+          "precio": 11.50
+        }
+      ]
+    },
+    {
+      "nombre": "Ensaladas",
+      "productos": [
+        {
+          "id": 11,
+          "nombre": "César",
+          "descripcion": "Lechuga romana, crutones, parmesano y aderezo césar",
+          "precio": 8.75
+        },
+        {
+          "id": 12,
+          "nombre": "Mediterránea",
+          "descripcion": "Lechuga, tomate, aceitunas, queso feta y vinagreta",
+          "precio": 9.25
+        },
+        {
+          "id": 13,
+          "nombre": "De Quinoa",
+          "descripcion": "Quinoa, aguacate, tomate cherry y nueces",
+          "precio": 10.50
+        },
+        {
+          "id": 14,
+          "nombre": "Caprese",
+          "descripcion": "Tomate, mozzarella de búfala y albahaca fresca",
+          "precio": 9.00
+        },
+        {
+          "id": 15,
+          "nombre": "Asiática",
+          "descripcion": "Verduras frescas con aderezo de jengibre y soja",
+          "precio": 9.75
+        }
+      ]
+    },
+    {
+      "nombre": "Postres",
+      "productos": [
+        {
+          "id": 16,
+          "nombre": "Tiramisú",
+          "descripcion": "Postre italiano con café y cacao",
+          "precio": 6.50
+        },
+        {
+          "id": 17,
+          "nombre": "Brownie con Helado",
+          "descripcion": "Brownie de chocolate con bola de helado de vainilla",
+          "precio": 7.25
+        },
+        {
+          "id": 18,
+          "nombre": "Cheesecake",
+          "descripcion": "Tarta de queso con salsa de frutos rojos",
+          "precio": 6.75
+        },
+        {
+          "id": 19,
+          "nombre": "Flan de Vainilla",
+          "descripcion": "Flan casero con caramelo",
+          "precio": 5.50
+        },
+        {
+          "id": 20,
+          "nombre": "Profiteroles",
+          "descripcion": "Bolitas de hojaldre rellenas de crema con chocolate",
+          "precio": 7.00
+        }
+      ]
+    },
+    {
+      "nombre": "Bebidas",
+      "productos": [
+        {
+          "id": 21,
+          "nombre": "Coca-Cola",
+          "descripcion": "Refresco de cola 500ml",
+          "precio": 3.00
+        },
+        {
+          "id": 22,
+          "nombre": "Agua Mineral",
+          "descripcion": "Agua sin gas 500ml",
+          "precio": 2.00
+        },
+        {
+          "id": 23,
+          "nombre": "Jugo de Naranja",
+          "descripcion": "Jugo natural exprimido",
+          "precio": 4.50
+        },
+        {
+          "id": 24,
+          "nombre": "Limonada",
+          "descripcion": "Limonada casera con menta",
+          "precio": 3.75
+        },
+        {
+          "id": 25,
+          "nombre": "Café Americano",
+          "descripcion": "Café negro filtrado",
+          "precio": 2.50
+        }
+      ]
+    }
+  ]
+}

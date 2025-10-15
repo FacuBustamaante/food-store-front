@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="/src/pages/auth/login/login.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>Create new account</h2>
+        <form id="register-form">
+            <label for="name">First Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your first name" required
+                style="box-sizing: border-box;">
+
+            <label for="email">Email</label>
+            <input type="email" autocomplete="off" id="email" placeholder="Enter your email" name="email" required
+                style="box-sizing: border-box;">
+
+            <label for="password">Password</label>
+            <input type="password" required id="password" name="password" placeholder="***********"
+                style="box-sizing: border-box;">
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <script src="/src/pages/auth/register/register.ts"></script>
+</body>
+
+</html>

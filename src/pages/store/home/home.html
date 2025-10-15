@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/pages/store/home/home.css">
+    <title>Página Principal</title>
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <h1>Food Store | Home</h1>
+            <p>Selecciona tus platos favoritos</p>
+        </div>
+        <div>
+            <button id="logoutButton" class="btn">Logout</button>
+        </div>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <div class="search-box">
+                <h3>Buscar Productos</h3>
+                <input type="text" id="searchInput" placeholder="Buscar por nombre...">
+            </div>
+
+            <div class="categories-box">
+                <h3>Categorías</h3>
+                <ul id="categoryList">
+                    <li data-category="all" class="active">Todas</li>
+                    <li data-category="camisetas">Camisetas</li>
+                    <li data-category="pantalones">Pantalones</li>
+                    <li data-category="chaquetas">Chaquetas</li>
+                </ul>
+            </div>
+
+            <div class="sort-box">
+                <h3>Ordenar</h3>
+                <select id="sortSelect">
+                    <option value="default">Por defecto</option>
+                    <option value="price-asc">Precio: de menor a mayor</option>
+                    <option value="price-desc">Precio: de mayor a menor</option>
+                </select>
+            </div>
+        </aside>
+
+        <section class="product-container" id="productContainer">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Tienda de Ropa. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="/src/pages/store/home/home.ts"></script>
+</body>
+
+</html>
