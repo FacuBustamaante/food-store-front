@@ -11,14 +11,14 @@ const getProducts = async (): Promise<IProduct[]> => {
         const response = await fetch(`${API_URL}/productos`);
 
         if (!response.ok) {
-            throw new Error('Failed to fetch products');
+            throw new Error('Error al obtener los productos');
         }
 
         const data = await response.json();
         console.log(data);
         return data;
     } catch (error) {
-        console.error('Error fetching products:', error);
+        console.error('Error al obtener los productos:', error);
         return [];
     }
 };
@@ -61,14 +61,14 @@ const getCategories = async (): Promise<Category[]> => {
         const response = await fetch(`${API_URL}/categorias`);
 
         if (!response.ok) {
-            throw new Error('Failed to fetch categories');
+            throw new Error('Error al obtener las categorías');
         }
 
         const data = await response.json();
         console.log(data);
         return data;
     } catch (error) {
-        console.error('Error fetching categories:', error);
+        console.error('Error al obtener las categorías:', error);
         return [];
     }
 };

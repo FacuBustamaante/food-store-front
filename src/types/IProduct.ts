@@ -10,9 +10,9 @@ export interface IProduct {
 export interface ProductoFetchResponse {
     id: number;
     nombre: string;
-    precio: number;
-    stock: number;
     descripcion: string;
+    precio: number;
     categoria: string;
+    stock: number;
     imagenUrl: string;
 }
