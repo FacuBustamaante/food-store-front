@@ -25,13 +25,20 @@ const login = async () => {
         }
 
         const data = await response.json();
-        console.log('Login successful:', data);
+        console.log(data.rol)
         alert('Login exitoso. ¡Bienvenido!');
+
         localStorage.setItem('user', JSON.stringify({
             mail: data.mail,
-            contrasena: data.contrasena,
+            rol: data.rol
         }));
-        window.location.href = "/src/pages/store/home/home.html";
+        
+        if(data.rol === 'ADMIN') {
+            window.location.href = '/src/pages/admin/adminHome/adminHome.html';
+        }else{
+            window.location.href = '/src/pages/store/home/home.html';
+        }
+
     } catch (error) {
         console.error('Error during login:', error);
     }
