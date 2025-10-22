@@ -6,6 +6,9 @@
     <title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/pages/auth/login/login.css">
+        <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=BBH+Sans+Hegarty&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
     <style>
 
     </style>
@@ -14,19 +17,20 @@
 <body>
     <div class="header">
         <div class="header-content">
-            <h1>Food Store Project</h1>
-            <h3>Proyecto Global Programación III</h3>
+            <h1 class="archivo-black-regular">Food Store Project</h1>
+            <h3 >Proyecto Global Programación III</h3>
             <p>Facundo Bustamante</p>
             <p>Lucas Russo</p>
             <p>Ignacio Odorico</p>
             <div>
-                <button class="btn">Ir al Repositorio</button>
+                <button class="btn">Ir al Repositorio (Front)</button>
+                <button class="btn">Ir al Repositorio (Back)</button>
             </div>
         </div>
 
     </div>
     <div class="login-container">
-        <h2>Login</h2>
+        <h2 class="archivo-black-regular">¡Welcome back!</h2>
         <form id="login-form">
             <label for="email">Email</label>
             <input type="email" autocomplete="off" id="email" placeholder="Enter your email" name="email" required
@@ -35,12 +39,9 @@
             <label for="password">Password</label>
             <input type="password" required id="password" name="password" placeholder="***********"
                 style="box-sizing: border-box;">
-            <label for="role">Role</label>
-            <select id="role" name="role" style="box-sizing: border-box;">
-                <option value="user">User</option>
-                <option value="admin">Admin</option>
+                
             </select>
-            <button type="submit">Login</button>
+            <button id="login-button" type="submit">Login</button>
             <a href="/src/pages/auth/register/register.html">Don't have an account? Sign up here.</a>
         </form>
     </div>

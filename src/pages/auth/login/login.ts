@@ -1,33 +1,44 @@
-import type { UserLogin } from "../../../types/IUser";
-import type { Role } from "../../../types/roles";
+const login = async () => {
+    const emailInput = (document.getElementById('email') as HTMLInputElement).value;
+    const passwordInput = (document.getElementById('password') as HTMLInputElement).value;
 
-const loginForm = document.getElementById('login-form') as HTMLFormElement;
-
-const emailInput = document.getElementById('email') as HTMLInputElement;
-const roleInput = document.getElementById('role') as HTMLSelectElement;
-const passwordInput = document.getElementById('password') as HTMLInputElement;
-
-loginForm.addEventListener('submit', (e: SubmitEvent) => {
-    e.preventDefault();
-
-    const email = emailInput.value;
-    const role: Role = roleInput.value as Role;
-    const password = passwordInput.value;
-
-    if (!email || !password || !role) {
-        alert('Please enter both email and password.');
+    if (!emailInput || !passwordInput) {
+        console.error('Email and password must not be empty.');
+        alert('Por favor, ingresa tu email y contraseña.');
         return;
-    } else {
+    }
 
-        const userData: UserLogin = {
-            email,
-            role,
-            logged: true
-        };
+    try {
+        const response = await fetch('http://localhost:8081/api/usuarios/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                "mail": emailInput,
+                "contrasena": passwordInput
+            }),
+        });
 
-        localStorage.setItem('userData', JSON.stringify(userData));
-        console.log(userData);
-        window.location.href = '../../store/home/home.html';
+        if (!response.ok) {
+            throw new Error('Login failed');
+        }
+
+        const data = await response.json();
+        console.log('Login successful:', data);
+        alert('Login exitoso. ¡Bienvenido!');
+        localStorage.setItem('user', JSON.stringify({
+            mail: data.mail,
+            contrasena: data.contrasena,
+        }));
+        window.location.href = "/src/pages/store/home/home.html";
+    } catch (error) {
+        console.error('Error during login:', error);
     }
 }
-);
+
+const loginButton = document.getElementById('login-button');
+loginButton?.addEventListener('click', (event) => {
+    event.preventDefault();
+    login();
+});

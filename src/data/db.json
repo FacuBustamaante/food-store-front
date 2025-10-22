@@ -1,177 +1,227 @@
 {
   "categorias": [
     {
+      "nombre": "Entrantes",
+      "articulos": [
+        {
+          "id": 101,
+          "nombre": "Aros de Cebolla",
+          "descripcion": "Crujientes aros de cebolla rebozados, servidos con salsa BBQ.",
+          "precio": 4.50,
+          "stock": 50,
+          "imgURL": ""
+        },
+        {
+          "id": 102,
+          "nombre": "Patatas Bravas",
+          "descripcion": "Patatas cortadas en dados y fritas, acompañadas de salsa brava y alioli.",
+          "precio": 5.00,
+          "stock": 45,
+          "imgURL": ""
+        },
+        {
+          "id": 103,
+          "nombre": "Hummus con Pan de Pita",
+          "descripcion": "Crema de garbanzos tradicional, servida con pan de pita recién horneado.",
+          "precio": 6.00,
+          "stock": 30,
+          "imgURL": ""
+        },
+        {
+          "id": 104,
+          "nombre": "Nachos Supremos",
+          "descripcion": "Totopos de maíz cubiertos con queso fundido, guacamole, crema agria y jalapeños.",
+          "precio": 7.50,
+          "stock": 35,
+          "imgURL": ""
+        },
+        {
+          "id": 105,
+          "nombre": "Ensalada Caprese",
+          "descripcion": "Rodajas de tomate y mozzarella fresca, aderezadas con albahaca y aceite de oliva.",
+          "precio": 5.50,
+          "stock": 40,
+          "imgURL": ""
+        }
+      ]
+    },
+    {
+      "nombre": "Platos Principales",
+      "articulos": [
+        {
+          "id": 201,
+          "nombre": "Lasaña de Carne",
+          "descripcion": "Capas de pasta, ragú de carne, bechamel y queso gratinado.",
+          "precio": 12.50,
+          "stock": 25,
+          "imgURL": ""
+        },
+        {
+          "id": 202,
+          "nombre": "Salmón a la Plancha",
+          "descripcion": "Filete de salmón fresco cocinado a la plancha, servido con verduras de temporada.",
+          "precio": 15.00,
+          "stock": 20,
+          "imgURL": ""
+        },
+        {
+          "id": 203,
+          "nombre": "Hamburguesa Clásica",
+          "descripcion": "Carne de vacuno de 150g, lechuga, tomate, cebolla y queso en pan brioche.",
+          "precio": 9.50,
+          "stock": 60,
+          "imgURL": ""
+        },
+        {
+          "id": 204,
+          "nombre": "Risotto de Setas",
+          "descripcion": "Arroz cremoso Arborio cocinado con una selección de setas silvestres y parmesano.",
+          "precio": 11.00,
+          "stock": 18,
+          "imgURL": ""
+        },
+        {
+          "id": 205,
+          "nombre": "Pollo al Curry",
+          "descripcion": "Trozos de pollo en salsa de curry suave con arroz basmati.",
+          "precio": 10.50,
+          "stock": 22,
+          "imgURL": ""
+        }
+      ]
+    },
+    {
       "nombre": "Pizzas",
-      "productos": [
+      "articulos": [
         {
-          "id": 1,
-          "nombre": "Margherita",
-          "descripcion": "Salsa de tomate, mozzarella fresca y albahaca",
-          "precio": 12.50
+          "id": 301,
+          "nombre": "Pizza Margarita",
+          "descripcion": "Tomate, mozzarella y albahaca fresca.",
+          "precio": 9.00,
+          "stock": 70,
+          "imgURL": ""
         },
         {
-          "id": 2,
-          "nombre": "Pepperoni",
-          "descripcion": "Salsa de tomate, mozzarella y pepperoni picante",
-          "precio": 14.75
+          "id": 302,
+          "nombre": "Pizza Pepperoni",
+          "descripcion": "Tomate, mozzarella y generosa capa de pepperoni.",
+          "precio": 10.50,
+          "stock": 65,
+          "imgURL": ""
         },
         {
-          "id": 3,
-          "nombre": "Cuatro Quesos",
-          "descripcion": "Mezcla de mozzarella, gorgonzola, parmesano y fontina",
-          "precio": 16.00
+          "id": 303,
+          "nombre": "Pizza Cuatro Quesos",
+          "descripcion": "Base de tomate con una mezcla de cuatro quesos italianos.",
+          "precio": 11.00,
+          "stock": 50,
+          "imgURL": ""
         },
         {
-          "id": 4,
-          "nombre": "Hawaiana",
-          "descripcion": "Jamón, piña y mozzarella",
-          "precio": 15.25
+          "id": 304,
+          "nombre": "Pizza Vegetariana",
+          "descripcion": "Tomate, mozzarella y una variedad de verduras de la huerta.",
+          "precio": 10.00,
+          "stock": 45,
+          "imgURL": ""
         },
         {
-          "id": 5,
-          "nombre": "Vegetariana",
-          "descripcion": "Verduras frescas de temporada y mozzarella",
-          "precio": 13.90
-        }
-      ]
-    },
-    {
-      "nombre": "Hamburguesas",
-      "productos": [
-        {
-          "id": 6,
-          "nombre": "Clásica",
-          "descripcion": "Carne de res, lechuga, tomate y salsa especial",
-          "precio": 9.50
-        },
-        {
-          "id": 7,
-          "nombre": "Doble Queso",
-          "descripcion": "Doble carne, doble queso cheddar y bacon",
-          "precio": 12.75
-        },
-        {
-          "id": 8,
-          "nombre": "Pollo Crispy",
-          "descripcion": "Pollo empanado, lechuga y mayonesa de ajo",
-          "precio": 10.25
-        },
-        {
-          "id": 9,
-          "nombre": "Vegetariana",
-          "descripcion": "Hamburguesa de lentejas y vegetales",
-          "precio": 11.00
-        },
-        {
-          "id": 10,
-          "nombre": "BBQ",
-          "descripcion": "Carne de res con salsa barbacoa y aros de cebolla",
-          "precio": 11.50
-        }
-      ]
-    },
-    {
-      "nombre": "Ensaladas",
-      "productos": [
-        {
-          "id": 11,
-          "nombre": "César",
-          "descripcion": "Lechuga romana, crutones, parmesano y aderezo césar",
-          "precio": 8.75
-        },
-        {
-          "id": 12,
-          "nombre": "Mediterránea",
-          "descripcion": "Lechuga, tomate, aceitunas, queso feta y vinagreta",
-          "precio": 9.25
-        },
-        {
-          "id": 13,
-          "nombre": "De Quinoa",
-          "descripcion": "Quinoa, aguacate, tomate cherry y nueces",
-          "precio": 10.50
-        },
-        {
-          "id": 14,
-          "nombre": "Caprese",
-          "descripcion": "Tomate, mozzarella de búfala y albahaca fresca",
-          "precio": 9.00
-        },
-        {
-          "id": 15,
-          "nombre": "Asiática",
-          "descripcion": "Verduras frescas con aderezo de jengibre y soja",
-          "precio": 9.75
+          "id": 305,
+          "nombre": "Pizza Hawaiana",
+          "descripcion": "Tomate, mozzarella, jamón cocido y piña.",
+          "precio": 9.50,
+          "stock": 55,
+          "imgURL": ""
         }
       ]
     },
     {
       "nombre": "Postres",
-      "productos": [
+      "articulos": [
         {
-          "id": 16,
+          "id": 401,
           "nombre": "Tiramisú",
-          "descripcion": "Postre italiano con café y cacao",
-          "precio": 6.50
+          "descripcion": "Clásico postre italiano de mascarpone, bizcochos de soletilla y café.",
+          "precio": 5.50,
+          "stock": 30,
+          "imgURL": ""
         },
         {
-          "id": 17,
+          "id": 402,
           "nombre": "Brownie con Helado",
-          "descripcion": "Brownie de chocolate con bola de helado de vainilla",
-          "precio": 7.25
+          "descripcion": "Cálido brownie de chocolate con nueces, servido con una bola de helado de vainilla.",
+          "precio": 6.00,
+          "stock": 40,
+          "imgURL": ""
         },
         {
-          "id": 18,
+          "id": 403,
+          "nombre": "Panna Cotta",
+          "descripcion": "Crema de nata cocida con coulis de frutos rojos.",
+          "precio": 4.50,
+          "stock": 35,
+          "imgURL": ""
+        },
+        {
+          "id": 404,
           "nombre": "Cheesecake",
-          "descripcion": "Tarta de queso con salsa de frutos rojos",
-          "precio": 6.75
+          "descripcion": "Tarta de queso cremosa sobre base de galleta, con mermelada de arándanos.",
+          "precio": 5.00,
+          "stock": 28,
+          "imgURL": ""
         },
         {
-          "id": 19,
-          "nombre": "Flan de Vainilla",
-          "descripcion": "Flan casero con caramelo",
-          "precio": 5.50
-        },
-        {
-          "id": 20,
-          "nombre": "Profiteroles",
-          "descripcion": "Bolitas de hojaldre rellenas de crema con chocolate",
-          "precio": 7.00
+          "id": 405,
+          "nombre": "Fruta de Temporada",
+          "descripcion": "Selección de fruta fresca y de temporada.",
+          "precio": 3.50,
+          "stock": 50,
+          "imgURL": ""
         }
       ]
     },
     {
       "nombre": "Bebidas",
-      "productos": [
+      "articulos": [
         {
-          "id": 21,
-          "nombre": "Coca-Cola",
-          "descripcion": "Refresco de cola 500ml",
-          "precio": 3.00
-        },
-        {
-          "id": 22,
+          "id": 501,
           "nombre": "Agua Mineral",
-          "descripcion": "Agua sin gas 500ml",
-          "precio": 2.00
+          "descripcion": "Botella de agua mineral natural (500ml).",
+          "precio": 2.00,
+          "stock": 100,
+          "imgURL": ""
         },
         {
-          "id": 23,
-          "nombre": "Jugo de Naranja",
-          "descripcion": "Jugo natural exprimido",
-          "precio": 4.50
+          "id": 502,
+          "nombre": "Refresco de Cola",
+          "descripcion": "Lata de refresco de cola.",
+          "precio": 2.50,
+          "stock": 90,
+          "imgURL": ""
         },
         {
-          "id": 24,
-          "nombre": "Limonada",
-          "descripcion": "Limonada casera con menta",
-          "precio": 3.75
+          "id": 503,
+          "nombre": "Cerveza Rubia",
+          "descripcion": "Cerveza rubia de barril (33cl).",
+          "precio": 3.00,
+          "stock": 80,
+          "imgURL": ""
         },
         {
-          "id": 25,
-          "nombre": "Café Americano",
-          "descripcion": "Café negro filtrado",
-          "precio": 2.50
+          "id": 504,
+          "nombre": "Zumo de Naranja Natural",
+          "descripcion": "Zumo de naranja recién exprimido.",
+          "precio": 3.50,
+          "stock": 40,
+          "imgURL": ""
+        },
+        {
+          "id": 505,
+          "nombre": "Café Espresso",
+          "descripcion": "Café espresso corto e intenso.",
+          "precio": 1.50,
+          "stock": 120,
+          "imgURL": ""
         }
       ]
     }

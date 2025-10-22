@@ -21,6 +21,6 @@ registerForm.addEventListener("submit", (e: SubmitEvent) => {
     };
 
     console.log(data);
-    window.localStorage.setItem("user", JSON.stringify(data));
+    window.localStorage.setItem("userData", JSON.stringify(data));
     window.location.href = "/src/pages/store/home/home.html";
 });

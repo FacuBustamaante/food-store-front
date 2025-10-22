@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Administración de Productos</title>
+    <link rel="stylesheet" href="/src/pages/admin/adminHome/adminHome.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=BBH+Sans+Hegarty&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <div>
+            <h2 class="archivo-black-regular">Admin Panel</h2>
+            <ul class="nav-links">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Gestión de Productos</a></li>
+                <li><a href="#">Gestión de Usuarios</a></li>
+                <li><a href="#">Reportes</a></li>
+            </ul>
+        </div>
+
+        <button class="logout-button">Logout</button>
+    </aside>
+
+    <main class="main-content">
+        <div class="header">
+            <h1 class="archivo-black-regular">Gestión de Productos</h1>
+            <a href="#" class="btn btn-add"><span class="material-icons">
+                    add
+                </span> Agregar Producto</a>
+        </div>
+
+        <table id="product-table" class="product-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre del Producto</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </main>
+    <script src="/src/pages/admin/adminHome/adminHome.ts" type="module"></script>
+    <script src="/src/pages/admin/adminHome/prueba.ts" type="module"></script>
+</body>
+
+</html>

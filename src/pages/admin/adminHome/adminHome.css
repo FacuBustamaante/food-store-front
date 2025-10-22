@@ -1,0 +1,162 @@
+:root {
+    --sidebar-width: 200px;
+    --header-height: 60px;
+    --primary-color: #bf0603;
+    --secondary-color: #8d0801;
+    --background-color: #558507;
+    --text-color: #292e33;
+    --add-color: #90dd13;
+    --edit-color: #4eaff0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-light);
+    display: flex;
+    /* Flexbox para el layout principal */
+    min-height: 100vh;
+    /* Ocupa al menos toda la altura de la ventana */
+}
+
+/* 1. Barra Lateral (Aside) */
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* Empuja el Logout al fondo */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.archivo-black-regular {
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--color-primary);
+}
+
+.nav-links, .logout-link {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.logout-button{
+    width: 90%;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+.nav-links a, .logout-link a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Estilo para empujar el logout al fondo */
+.logout-link {
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logout-link a {
+    color: var(--color-danger);
+    /* Resaltar el botón de cerrar sesión */
+}
+
+/* 2. Contenido Principal */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+/* 3. Botones de Acción */
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.actions {
+    display: flex;
+}
+
+.btn-add {
+    background-color: var(--add-color);
+    color: white;
+}
+
+.btn-edit {
+    background-color: var(--edit-color);
+    color: white;
+    margin-right: 5px;
+}
+
+.btn-delete {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* 4. Tabla de Productos */
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.product-table th, .product-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.product-table th {
+    background-color: #e9ecef;
+    color: var(--color-dark);
+}
+
+.product-table tr:hover {
+    background-color: var(--color-light);
+}
+
+.header {
+    display: flex;
+}
