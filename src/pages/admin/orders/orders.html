@@ -1,39 +1,42 @@
 <!-- src/pages/admin/orders/orders.html -->
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8" />
-  <title>Gestión de Pedidos</title>
-  <link rel="stylesheet" href="./orders.css" />
+    <meta charset="UTF-8" />
+    <title>Gestión de Pedidos</title>
+    <link rel="stylesheet" href="./orders.css" />
 </head>
+
 <body>
-  <main class="orders-container">
-    <h1>Gestión de Pedidos</h1>
+    <main class="orders-container">
+        <h1>Gestión de Pedidos</h1>
 
-    <!-- Filtro -->
-    <div class="filter-bar">
-      <label for="estadoFilter">Filtrar por estado:</label>
-      <select id="estadoFilter">
-        <option value="ALL">Todos</option>
-        <option value="PENDIENTE">Pendiente</option>
-        <option value="EN_PREPARACION">En preparación</option>
-        <option value="ENTREGADO">Entregado</option>
-        <option value="CANCELADO">Cancelado</option>
-      </select>
+        <!-- Filtro -->
+        <div class="filter-bar">
+            <label for="estadoFilter">Filtrar por estado:</label>
+            <select id="estadoFilter">
+                <option value="ALL">Todos</option>
+                <option value="PENDIENTE">Pendiente</option>
+                <option value="EN_PREPARACION">En preparación</option>
+                <option value="ENTREGADO">Entregado</option>
+                <option value="CANCELADO">Cancelado</option>
+            </select>
+        </div>
+
+        <!-- Contenedor de pedidos -->
+        <div id="ordersList" class="orders-list"></div>
+    </main>
+
+    <!-- Modal -->
+    <div id="orderModal" class="modal hidden">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <div id="orderDetail"></div>
+        </div>
     </div>
 
-    <!-- Contenedor de pedidos -->
-    <div id="ordersList" class="orders-list"></div>
-  </main>
-
-  <!-- Modal -->
-  <div id="orderModal" class="modal hidden">
-    <div class="modal-content">
-      <span id="closeModal" class="close">&times;</span>
-      <div id="orderDetail"></div>
-    </div>
-  </div>
-
-  <script type="module" src="./orders.ts"></script>
+    <script type="module" src="./orders.ts"></script>
 </body>
+
 </html>
