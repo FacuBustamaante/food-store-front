@@ -10,19 +10,10 @@
 
 <body>
     <main class="orders-container">
-        <h1>Gestión de Pedidos</h1>
-
-        <!-- Filtro -->
-        <div class="filter-bar">
-            <label for="estadoFilter">Filtrar por estado:</label>
-            <select id="estadoFilter">
-                <option value="ALL">Todos</option>
-                <option value="PENDIENTE">Pendiente</option>
-                <option value="EN_PREPARACION">En preparación</option>
-                <option value="ENTREGADO">Entregado</option>
-                <option value="CANCELADO">Cancelado</option>
-            </select>
-        </div>
+        <header>
+            <button class="back-btn">Volver al Dashboard</button>
+            <h1 class="title">Gestión de Pedidos</h1>
+        </header>
 
         <!-- Contenedor de pedidos -->
         <div id="ordersList" class="orders-list"></div>
