@@ -60,6 +60,11 @@ header{
     cursor: pointer;
 }
 
+.back-btn a{
+    text-decoration: none;
+    color: white;
+}
+
 .btn{
     padding: 0.5rem 1rem;
     border: none;

@@ -1,4 +1,5 @@
 import type { ProductoFetchResponse } from "../../../types/IProduct";
+import { checkUser } from "../../../utils/auth";
 
 const API_URL = "http://localhost:8081/api";
 
