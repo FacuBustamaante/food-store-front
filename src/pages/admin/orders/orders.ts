@@ -8,6 +8,7 @@ const fetchPedidos = async (): Promise<IOrder[]> => {
         const response = await fetch(`${API_URL}/pedidos`);
         if (!response.ok) throw new Error("Error en la respuesta de la API");
         const pedidos: IOrder[] = await response.json();
+        console.log(pedidos)
         return pedidos;
     } catch (error) {
         console.error("Error cargando pedidos", error);
@@ -35,8 +36,8 @@ function renderPedidos(lista: IOrder[]) {
             <p><strong>Estado:</strong> ${pedido.estado}</p>
             <p><strong>Total:</strong> $${pedido.total.toFixed(2)}</p>
             <div class="divisor"></div>
-            <button id="detalle-btn" class="btn" data-id="${pedido.id}">Ver Detalle</button>
-            <button id="estado-btn" class="btn" data-id="${pedido.id}">Cambiar Estado</button>
+            <button id="detalle-btn" class="btn" data-id="${pedido.id}">Ver detalle</button>
+            <button id="estado-btn" class="btn" data-id="${pedido.id}">Cambiar estado</button>
         `;
         ordersList.appendChild(card);
     });
@@ -49,6 +50,17 @@ document.addEventListener("click", (event) => {
         if (orderId) {
             console.log(orderId)
             window.location.href = `/src/pages/admin/orders/OrderState/changeState.html?id=${orderId}`;
+        }
+    }
+});
+
+document.addEventListener("click", (event) => {
+    const target = event.target as HTMLElement;
+    if (target && target.id === "detalle-btn") {
+        const orderId = target.getAttribute("data-id");
+        if (orderId) {
+            console.log(orderId)
+            window.location.href=`/src/pages/admin/orders/orderDetails/orderDetails.html?id=${orderId}`;
         }
     }
 });

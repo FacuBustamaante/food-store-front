@@ -1,9 +1,11 @@
 import type { IProduct } from "./IProduct";
 
 export interface IOrderItem {
-    producto: IProduct;
+    productoId: number;
+    nombreProducto: string;
     cantidad: number;
     subtotal: number;
+    precioUnitario: number;
 }
 
 export interface IOrder {
@@ -13,6 +15,6 @@ export interface IOrder {
     nombreCompletoUsuario: string;
     fecha: string;
     estado: "PENDIENTE" | "EN_PREPARACION" | "ENTREGADO" | "CANCELADO";
-    productos: IOrderItem[];
+    detalles: IOrderItem[];
     total: number;
 }

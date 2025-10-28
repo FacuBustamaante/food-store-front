@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p{
+    margin: 1rem;
+}
+
+body {
+    font-family: Jetbrains Mono, monospace;
+    background-color: #aa1919;
+    padding: 20px;
+}
+
+.detalles {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#card{
+    width: 30%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.divisor{
+    border: 2px dashed #ccc;
+    margin : 20px 0;
+}
