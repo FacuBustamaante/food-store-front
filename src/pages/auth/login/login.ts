@@ -28,7 +28,8 @@ const login = async () => {
         console.log(data.rol)
         alert('Login exitoso. ¡Bienvenido!');
 
-        localStorage.setItem('user', JSON.stringify({
+        localStorage.setItem('userData', JSON.stringify({
+            nombre: data.nombre,
             mail: data.mail,
             rol: data.rol
         }));

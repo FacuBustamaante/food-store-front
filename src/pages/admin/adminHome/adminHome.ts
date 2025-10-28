@@ -1,6 +1,8 @@
 import type { ProductoFetchResponse } from "../../../types/IProduct";
 import { checkUser } from "../../../utils/auth";
 
+checkUser();
+
 const API_URL = "http://localhost:8081/api";
 
 // Función para obtener los productos desde la API
@@ -72,3 +74,12 @@ document.addEventListener('click', (event) => {
         }
     }
 });
+
+//Funcionalidad de botón Logout 
+const logoutButton = document.getElementById('logoutButton');
+logoutButton?.addEventListener('click', () => {
+    localStorage.removeItem('user');
+    localStorage.removeItem('userData');
+    checkUser();
+});
+

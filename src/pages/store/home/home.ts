@@ -63,6 +63,7 @@ if(span && nombreUsuario) {
 const logoutButton = document.getElementById('logoutButton');
 logoutButton?.addEventListener('click', () => {
     localStorage.removeItem('user');
+    localStorage.removeItem('userData');
     checkUser();
 });
 
