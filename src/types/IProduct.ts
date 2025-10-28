@@ -12,7 +12,16 @@ export interface ProductoFetchResponse {
     nombre: string;
     descripcion: string;
     precio: number;
-    categoria: string;
+    categoriaId: string;
     stock: number;
-    imagenUrl: string;
+    imgURL: string;
+}
+
+export interface NewProduct {
+    nombre: string;
+    descripcion: string;
+    precio: number;
+    categoriaId: number;
+    imgURL: string;
+    stock: number;
 }

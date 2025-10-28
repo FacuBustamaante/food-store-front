@@ -37,6 +37,17 @@ getProducts().then(data => {
     });
 });
 
+//Evento de editar producto
+document.addEventListener('click', (event) => {
+    const target = event.target as HTMLElement;
+    if (target && target.id === 'edit-btn') {
+        const productId = target.getAttribute('data-id');
+        if (productId) {
+            window.location.href = `/src/pages/admin/products/editProduct.html?id=${productId}`;
+        }
+    }
+});
+
 // Función para eliminar un producto
 const eliminarProducto = async (id: number) => {
     try {
