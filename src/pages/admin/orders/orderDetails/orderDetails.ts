@@ -2,7 +2,7 @@ import type { IOrder } from "../../../../types/IOrders";
 
 const api = "http://localhost:8081/api";
 
-const obtenerPedido = async (id: string): Promise<IOrder | null> => {
+export const obtenerPedido = async (id: string): Promise<IOrder | null> => {
     try {
         const response = await fetch(`${api}/pedidos/${id}`);
         if (!response.ok) {

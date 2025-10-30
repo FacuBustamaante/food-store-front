@@ -29,6 +29,7 @@ const login = async () => {
         alert('Login exitoso. ¡Bienvenido!');
 
         localStorage.setItem('userData', JSON.stringify({
+            id: data.id,
             nombre: data.nombre,
             mail: data.mail,
             rol: data.rol

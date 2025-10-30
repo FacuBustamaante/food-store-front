@@ -1,9 +1,16 @@
 import type { IProduct } from "../../../types/IProduct";
 import type { Category } from "../../../types/ICategory";
 import { checkUser } from "../../../utils/auth";
+import { recuperarNombreUsuario } from "../../../utils/usernameFromLocal";
 
+//Verifica si el usuario está logueado
 checkUser();
+
+//Recupera r el nombre de usuario para mostrar en el header
+recuperarNombreUsuario();
+
 const API_URL = 'http://localhost:8081/api';
+const productsAll: IProduct[] = [];
 
 //Fetch de productos
 const getProducts = async (): Promise<IProduct[]> => {
@@ -13,9 +20,7 @@ const getProducts = async (): Promise<IProduct[]> => {
         if (!response.ok) {
             throw new Error('Error al obtener los productos');
         }
-
         const data = await response.json();
-        console.log(data);
         return data;
     } catch (error) {
         console.error('Error al obtener los productos:', error);
@@ -23,41 +28,11 @@ const getProducts = async (): Promise<IProduct[]> => {
     }
 };
 getProducts().then((products) => {
+    productsAll.push(...products);
+    console.log("Todos los productos:", productsAll)
     renderProducts(products);
 });
 
-//Obtener nombre de usuario
-const recuperarNombreUsuario = () => {
-    const userDataJSON = localStorage.getItem('userData');
-
-    if (!userDataJSON) {
-        console.warn("No se encontraron datos de 'userData' en localStorage.");
-        return null; 
-    }
-
-    try {
-        const userData = JSON.parse(userDataJSON);
-
-        if (userData && userData.nombre) {
-            return userData.nombre;
-        } else {
-            console.warn("La propiedad 'nombre' no existe en los datos de usuario.");
-            return null;
-        }
-
-    } catch (error) {
-        console.error("Error al parsear los datos de sesión de localStorage:", error);
-        return null;
-    }
-}
-
-//Mostrar nombre de usuario en header
-const span = document.getElementById('userName');
-const nombreUsuario = recuperarNombreUsuario();
-
-if(span && nombreUsuario) {
-    span.textContent = nombreUsuario;
-}
 
 //Funcionalidad de botón Logout 
 const logoutButton = document.getElementById('logoutButton');
@@ -81,6 +56,7 @@ const renderProducts = (products: IProduct[]) => {
             <h3 class="product-name">${product.nombre}</h3>
             <p class="product-description">${product.descripcion}</p>
             <p class="product-price">$${product.precio.toFixed(2)}</p>
+            <p class="product-category">${product.nombreCategoria}</p>
             <button class="card-btn">Agregar al carrito</button>
         `;
 
@@ -98,7 +74,6 @@ const getCategories = async (): Promise<Category[]> => {
         }
 
         const data = await response.json();
-        console.log(data);
         return data;
     } catch (error) {
         console.error('Error al obtener las categorías:', error);
@@ -124,3 +99,49 @@ const renderCategories = (categories: Category[]) => {
         categoryContainer.appendChild(categoryCard);
     });
 };
+
+//Filtrar productos por categoria
+categoryContainer?.addEventListener('click', (event) => {
+    const target = event.target as HTMLElement;
+    if (target.tagName === 'LI') {
+        const selectedCategory = target.getAttribute('data-category');
+
+        if (selectedCategory === '') {
+            productContainer!.innerHTML = '';
+            renderProducts(productsAll);
+            return;
+        }
+        else {
+            const filteredProducts = productsAll.filter(product => product.nombreCategoria === selectedCategory);
+            productContainer!.innerHTML = '';
+            renderProducts(filteredProducts);
+        }
+    }
+});
+
+//Filtro de búsqueda por nombre
+const searchInput = document.getElementById('searchInput') as HTMLInputElement;
+searchInput?.addEventListener('input', () => {
+    const palabra = searchInput.value.toLowerCase();
+    const filteredProducts = productsAll.filter(product => product.nombre.toLowerCase().includes(palabra));
+    productContainer!.innerHTML = '';
+    renderProducts(filteredProducts);
+});
+
+//Ordenar productos por precio
+const sortSelect = document.getElementById('sortSelect') as HTMLSelectElement;
+sortSelect?.addEventListener('change', () => {
+    const sortBy = sortSelect.value;
+    let sortedProducts: IProduct[] = [];
+
+    if (sortBy === 'price-asc') {
+        sortedProducts = [...productsAll].sort((a, b) => a.precio - b.precio);
+    } else if (sortBy === 'price-desc') {
+        sortedProducts = [...productsAll].sort((a, b) => b.precio - a.precio);
+    } else {
+        sortedProducts = [...productsAll];
+    }
+
+    productContainer!.innerHTML = '';
+    renderProducts(sortedProducts);
+});
