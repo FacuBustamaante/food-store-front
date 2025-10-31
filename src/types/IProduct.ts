@@ -5,6 +5,7 @@ export interface IProduct {
     precio: number;
     nombreCategoria: string;
     imgURL: string;
+    stock?: number;
 }
 
 export interface ProductoFetchResponse {

@@ -2,6 +2,7 @@ import type { IProduct } from "../../../types/IProduct";
 import type { Category } from "../../../types/ICategory";
 import { checkUser } from "../../../utils/auth";
 import { recuperarNombreUsuario } from "../../../utils/usernameFromLocal";
+import { addToCart } from "../../../utils/cart";
 
 //Verifica si el usuario está logueado
 checkUser();
@@ -45,24 +46,48 @@ logoutButton?.addEventListener('click', () => {
 //Mapeo de productos
 const productContainer = document.getElementById('productContainer');
 const renderProducts = (products: IProduct[]) => {
-    if (!productContainer) return;
+  if (!productContainer) return;
 
-    products.forEach((product: IProduct) => {
-        const productCard = document.createElement('div');
-        productCard.className = 'product-card';
+  productContainer.innerHTML = ""; // Limpia antes de renderizar
 
-        productCard.innerHTML = `
-            <img src="${product.imgURL}" alt="${product.nombre}" class="product-image" />
-            <h3 class="product-name">${product.nombre}</h3>
-            <p class="product-description">${product.descripcion}</p>
-            <p class="product-price">$${product.precio.toFixed(2)}</p>
-            <p class="product-category">${product.nombreCategoria}</p>
-            <button class="card-btn">Agregar al carrito</button>
-        `;
+  products.forEach((product: IProduct) => {
+    const productCard = document.createElement("div");
+    productCard.className = "product-card";
 
-        productContainer.appendChild(productCard);
+    productCard.innerHTML = `
+      <img src="${product.imgURL}" alt="${product.nombre}" class="product-image" />
+      <h3 class="product-name">${product.nombre}</h3>
+      <p class="product-description">${product.descripcion}</p>
+      <p class="product-price">$${product.precio.toFixed(2)}</p>
+      <p class="product-category">${product.nombreCategoria}</p>
+      <button class="card-btn" 
+              data-id="${product.id}" 
+              data-nombre="${product.nombre}" 
+              data-precio="${product.precio}" 
+              data-img="${product.imgURL}" 
+              data-stock="${product.stock}">
+        Agregar al carrito
+      </button>
+    `;
+
+    productContainer.appendChild(productCard);
+  });
+
+  // Asigna eventos a los botones
+  document.querySelectorAll<HTMLButtonElement>(".card-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const productoId = Number(btn.dataset.id);
+      const nombre = String(btn.dataset.nombre);
+      const precio = Number(btn.dataset.precio);
+      const imgURL = btn.dataset.img;
+      const stock = btn.dataset.stock ? Number(btn.dataset.stock) : undefined;
+
+      addToCart({ productoId, nombre, precio, imgURL, stock }, 1);
+      btn.textContent = "Agregado ✅";
+      setTimeout(() => (btn.textContent = "Agregar al carrito"), 1000);
     });
-}
+  });
+};
 
 //Fetch de categorias
 const getCategories = async (): Promise<Category[]> => {

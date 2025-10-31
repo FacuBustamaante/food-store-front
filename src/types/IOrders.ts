@@ -18,3 +18,18 @@ export interface IOrder {
     detalles: IOrderItem[];
     total: number;
 }
+export interface ICartItem {
+  productoId: number;
+  nombre: string;
+  precio: number;
+  imgURL?: string;
+  stock?: number;
+  cantidad: number;
+}
+
+export interface ICart {
+  items: ICartItem[];
+  envio: number;
+  subtotal: number;
+  total: number;
+}
