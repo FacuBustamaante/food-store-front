@@ -1,5 +1,4 @@
 import type { IOrder } from '../../../types/IOrders';
-import { obtenerPedido } from '../../admin/orders/orderDetails/orderDetails';
 
 const API = "http://localhost:8081/api"
 

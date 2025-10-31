@@ -1,7 +1,8 @@
-import type { IProduct } from "../../../types/IProduct";
+import type { IProduct, CartProduct } from "../../../types/IProduct";
 import type { Category } from "../../../types/ICategory";
 import { checkUser } from "../../../utils/auth";
 import { recuperarNombreUsuario } from "../../../utils/usernameFromLocal";
+import { addToCart } from "../../../utils/cart";
 
 //Verifica si el usuario está logueado
 checkUser();
@@ -145,3 +146,19 @@ sortSelect?.addEventListener('change', () => {
     productContainer!.innerHTML = '';
     renderProducts(sortedProducts);
 });
+
+//Agregar al carrito
+productContainer?.addEventListener('click', (event) => {
+    const target = event.target as HTMLElement;
+    if (target.classList.contains('card-btn')) {
+        const productCard = target.closest('.product-card');
+        if (productCard) {
+            const productName = productCard.querySelector('.product-name')?.textContent;
+            const product = productsAll.find(p => p.nombre === productName);
+            if (product) {
+                addToCart(product);
+            }
+        }
+    }
+});
+

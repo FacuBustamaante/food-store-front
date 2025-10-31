@@ -25,3 +25,15 @@ export interface NewProduct {
     imgURL: string;
     stock: number;
 }
+
+export interface CartProduct {
+    id: number;
+    nombre: string;
+    precio: number;
+    cantidad: number;
+}
+
+export interface backendProduct{
+    productoId: number;
+    cantidad: number;
+}

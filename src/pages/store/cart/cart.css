@@ -1,0 +1,137 @@
+:root {
+    --primary-color: #bf0603;
+    --secondary-color: #8d0801;
+    --background-color: #558507;
+    --text-color: #292e33;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--primary-color);
+    padding: 2rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.archivo-black-regular {
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: white;
+    color: var(--text-color);
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+
+.btn:hover {
+    background: var(--secondary-color);
+    color: white;
+    transition: 0.3s;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.order-card {
+    border: 2px solid #ccc;
+    border-radius: 7px;
+    padding: 2rem;
+    width: 400px;
+    background-color: #fff;
+}
+
+#cartSection {
+    margin: 2rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+}
+
+#spanTotal {
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.divisor {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-top: 2px dashed #ccc;
+}
+
+.order-details {
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.detalle-item{
+    color: #636363;
+}
+
+#cartContainer{
+    background-color: #e9e9e9;
+    padding: 4rem 3rem 1rem;
+    border-radius: 30px;
+    width: 30%;
+}
+
+.cart-title{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.cart-total{
+    margin-top: 2rem;
+}
+
+.aside-div{
+    background-color: var(--primary-color);
+    color: white;
+    width: 50%;
+    height: 90vh;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-container{
+    margin-top: 2rem;
+
+    gap: 1rem;
+}
+
+.width{
+    width: 100%;
+}
+
+.backgroud{
+    background-color: var(--background-color);
+}

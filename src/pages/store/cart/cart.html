@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="cart.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=BBH+Sans+Hegarty&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Mi Carrito</title>
+</head>
+
+<body>
+    <header>
+        <div style="text-align: left;">
+            <h1 class="archivo-black-regular">Mi Carrito</h1>
+            <p>Food Store tienda virtual</p>
+        </div>
+        <div class="btn-container">
+            <button id="homeButton" class="btn"><span class="material-icons">
+                    home
+                </span><a href="/src/pages/store/home/home.html">Inicio</a></button>
+        </div>
+    </header>
+
+    <main>
+        <section id="cartSection">
+            <!-- Acá se carga el carrito -->
+            <div id="cartContainer">
+                <h1 class="cart-title">Tu carrito</h1>
+                <div class="divisor"></div>
+                <div id="content"></div>
+                <div class="divisor"></div>
+                <div id="total">
+                    <h1 class="cart-total">Total a pagar: </h1><span id="spanTotal"></span>
+                </div>
+                <div class="btn-container">
+                    <button id="checkoutButton" class="btn"><span class="material-icons">
+                            shopping_cart_checkout
+                        </span>Finalizar compra</button>
+                    <button id="continue-shopping" class="btn"><span class="material-icons">
+                            shopping_cart_checkout
+                        </span>Seguir comprando</button>
+                </div>
+            </div>
+            <div class="aside-div">
+                <h1>Gracias por comprar en nuestra tienda!</h1>
+            </div>
+        </section>
+    </main>
+
+    <script src="cart.ts" type="module"></script>
+</body>
+
+</html>
