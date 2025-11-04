@@ -10,13 +10,13 @@ checkUser();
 //Recupera r el nombre de usuario para mostrar en el header
 recuperarNombreUsuario();
 
-const API_URL = 'http://localhost:8081/api';
+const API = import.meta.env.VITE_API_URL;
 const productsAll: IProduct[] = [];
 
 //Fetch de productos
 const getProducts = async (): Promise<IProduct[]> => {
     try {
-        const response = await fetch(`${API_URL}/productos`);
+        const response = await fetch(`${API}/productos`);
 
         if (!response.ok) {
             throw new Error('Error al obtener los productos');
@@ -57,7 +57,6 @@ const renderProducts = (products: IProduct[]) => {
             <h3 class="product-name">${product.nombre}</h3>
             <p class="product-description">${product.descripcion}</p>
             <p class="product-price">$${product.precio.toFixed(2)}</p>
-            <p class="product-category">${product.nombreCategoria}</p>
             <button class="card-btn">Agregar al carrito</button>
         `;
 
@@ -68,7 +67,7 @@ const renderProducts = (products: IProduct[]) => {
 //Fetch de categorias
 const getCategories = async (): Promise<Category[]> => {
     try {
-        const response = await fetch(`${API_URL}/categorias`);
+        const response = await fetch(`${API}/categorias`);
 
         if (!response.ok) {
             throw new Error('Error al obtener las categorías');

@@ -7,9 +7,12 @@ const celularInput = document.getElementById("celular") as HTMLInputElement;
 const emailInput = document.getElementById("email") as HTMLInputElement;
 const passwordInput = document.getElementById("password") as HTMLInputElement;
 
+const API = import.meta.env.VITE_API_URL as string;
+
 const createNewUser = async (data: UserRegister) => {
     try {
-        const response = await fetch("http://localhost:8081/api/usuarios", {
+        console.log(API)
+        const response = await fetch(`${API}/usuarios`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -53,5 +56,6 @@ registerForm.addEventListener("submit", (e: SubmitEvent) => {
         role: "USUARIO",
     };
     createNewUser(data);
+    console.log(data)
     window.localStorage.setItem("userData", JSON.stringify(sessionData));
 });

@@ -1,6 +1,7 @@
 const login = async () => {
     const emailInput = (document.getElementById('email') as HTMLInputElement).value;
     const passwordInput = (document.getElementById('password') as HTMLInputElement).value;
+    const API = import.meta.env.VITE_API_URL;
 
     if (!emailInput || !passwordInput) {
         console.error('Email and password must not be empty.');
@@ -9,7 +10,7 @@ const login = async () => {
     }
 
     try {
-        const response = await fetch('http://localhost:8081/api/usuarios/login', {
+        const response = await fetch(`${API}/usuarios/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

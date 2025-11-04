@@ -30,10 +30,16 @@
     <main class="main-content">
         <div class="header">
             <h1 class="archivo-black-regular">Gestión de Productos</h1>
-            <a href="/src/pages/admin/products/addProduct.html" class="btn btn-add"><span class="material-icons">
-                    add
-                </span> Agregar Producto</a>
+            <div class="add-btn">
+                <a href="/src/pages/admin/categories/categories.html" class="btn btn-add"><span class="material-icons">
+                        add
+                    </span> Agregar Categoria</a>
                 <div id="modal-container"></div>
+                <a href="/src/pages/admin/products/addProduct.html" class="btn btn-add"><span class="material-icons">
+                        add
+                    </span> Agregar Producto</a>
+                <div id="modal-container"></div>
+            </div>
         </div>
 
         <table id="product-table" class="product-table">
@@ -52,8 +58,6 @@
         </table>
     </main>
     <script src="/src/pages/admin/adminHome/adminHome.ts" type="module"></script>
-    <script src="/src/pages/admin/adminHome/prueba.ts" type="module"></script>
-    <script src="/src/pages/admin/adminHome/modal.ts"></script>
 </body>
 
 </html>

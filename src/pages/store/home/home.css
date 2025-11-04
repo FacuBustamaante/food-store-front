@@ -41,6 +41,12 @@ header {
     border-bottom: 1px solid #ccc;
 }
 
+.product-name{
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
 .product-container {
     display: grid;
     background-color: white;
@@ -103,6 +109,13 @@ aside {
     height: 100vh;
 }
 
+.product-description{
+    flex-grow: .5;
+    margin-bottom: 10px;
+    color: #606060;
+    font-size: 0.9rem;
+}
+
 .product-card {
     display: flex;
     flex-direction: column;
@@ -116,16 +129,6 @@ aside {
     max-height: 450px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     height: 400px;
-}
-
-.product-info{
-    padding-top: 10px;
-    margin-left:5px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    flex-grow: 1;
-    border-top: 1px solid #e0e0e0;
 }
 
 input, select {

@@ -1,7 +1,6 @@
 import type { NewProduct } from "../../../types/IProduct";
 
-const apiUrl = 'http://localhost:8081/api';
-
+const API = import.meta.env.VITE_API_URL;
 const addProductForm = document.getElementById('add-product-form') as HTMLFormElement;
 
 addProductForm.addEventListener('submit', async (event) => {
@@ -29,7 +28,7 @@ addProductForm.addEventListener('submit', async (event) => {
 });
 
 export const addProduct = async (product: NewProduct): Promise<void> => {
-    const response = await fetch(`${apiUrl}/productos`, {
+    const response = await fetch(`${API}/productos`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

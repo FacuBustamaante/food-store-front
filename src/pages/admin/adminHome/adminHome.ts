@@ -3,12 +3,12 @@ import { checkUser } from "../../../utils/auth";
 
 checkUser();
 
-const API_URL = "http://localhost:8081/api";
+const API = import.meta.env.VITE_API_URL;
 
 // Función para obtener los productos desde la API
 const getProducts = async () => {
     try {
-        const response = await fetch(`${API_URL}/productos`);
+        const response = await fetch(`${API}/productos`);
         const data = await response.json();
         console.log(data)
         return data;
@@ -51,7 +51,7 @@ document.addEventListener('click', (event) => {
 // Función para eliminar un producto
 const eliminarProducto = async (id: number) => {
     try {
-        const response = await fetch(`${API_URL}/productos/${id}`, {
+        const response = await fetch(`${API}/productos/${id}`, {
             method: 'DELETE',
         });
         if (response.ok) {

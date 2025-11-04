@@ -1,7 +1,7 @@
 import type { CartProduct } from "../../../types/IProduct";
 import { createOrder } from "../../../utils/createOrder";
 
-const API = 'http://localhost:8081/api';
+const API = import.meta.env.VITE_API_URL;
 const cart = JSON.parse(localStorage.getItem('cart') || '[]');
 
 export const renderCart = () => {

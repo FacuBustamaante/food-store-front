@@ -63,6 +63,11 @@ body {
     border-radius: 5px;
 }
 
+.add-btn{
+    display: flex;
+    gap: 10px;
+}
+
 .nav-links a, .logout-link a {
     display: block;
     padding: 10px 20px;

@@ -1,11 +1,11 @@
 import type { IOrder } from "../../../types/IOrders";
 
-const API_URL = "http://localhost:8081/api";
+const API = import.meta.env.VITE_API_URL;
 const ordersList = document.getElementById("ordersList") as HTMLElement;
 
 const fetchPedidos = async (): Promise<IOrder[]> => {
     try {
-        const response = await fetch(`${API_URL}/pedidos`);
+        const response = await fetch(`${API}/pedidos`);
         if (!response.ok) throw new Error("Error en la respuesta de la API");
         const pedidos: IOrder[] = await response.json();
         console.log(pedidos)
