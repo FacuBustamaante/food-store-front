@@ -34,5 +34,15 @@ export const addToCart = (product: IProduct) => {
     }
 
     localStorage.setItem('cart', JSON.stringify(cart));
-    alert(`Producto "${product.nombre}" agregado al carrito.`);
+    
 };
+
+export const eliminarProductoDelCarrito = (productId: number) => {
+    const cartData = localStorage.getItem('cart');
+    if (!cartData) return;
+
+    const cart: Cart = JSON.parse(cartData);
+    cart.detalles = cart.detalles.filter((item: CartProduct) => item.id !== productId);
+    localStorage.setItem('cart', JSON.stringify(cart));
+};
+

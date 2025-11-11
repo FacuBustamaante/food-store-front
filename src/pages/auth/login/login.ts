@@ -26,8 +26,6 @@ const login = async () => {
         }
 
         const data = await response.json();
-        console.log(data.rol)
-        alert('Login exitoso. ¡Bienvenido!');
 
         localStorage.setItem('userData', JSON.stringify({
             id: data.id,
@@ -35,12 +33,7 @@ const login = async () => {
             mail: data.mail,
             rol: data.rol
         }));
-        
-        if(data.rol === 'ADMIN') {
-            window.location.href = '/src/pages/admin/adminHome/adminHome.html';
-        }else{
-            window.location.href = '/src/pages/store/home/home.html';
-        }
+        handleModal(data);
 
     } catch (error) {
         console.error('Error during login:', error);
@@ -52,3 +45,18 @@ loginButton?.addEventListener('click', (event) => {
     event.preventDefault();
     login();
 });
+
+const handleModal = (data: { rol: string }) => {
+    const modal = document.getElementById('successModal');
+    if (modal) {
+        modal.style.display = 'block';
+        setTimeout(() => {
+            modal.style.display = 'none';
+            if(data.rol === 'ADMIN') {
+                window.location.href = '/src/pages/admin/adminHome/adminHome.html';
+            } else {
+                window.location.href = '/src/pages/store/home/home.html';
+            }
+        }, 3000);
+    }
+}

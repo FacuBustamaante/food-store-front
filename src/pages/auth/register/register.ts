@@ -25,12 +25,11 @@ const createNewUser = async (data: UserRegister) => {
         }
 
         const result = await response.json();
-        console.log("User registered successfully:", result);
-        window.location.href = "/src/pages/store/home/home.html";
+        handleModal();
     } catch (error) {
         console.error("Error registering user:", error);
     }
-};
+};  
 
 registerForm.addEventListener("submit", (e: SubmitEvent) => {
     e.preventDefault();
@@ -59,3 +58,14 @@ registerForm.addEventListener("submit", (e: SubmitEvent) => {
     console.log(data)
     window.localStorage.setItem("userData", JSON.stringify(sessionData));
 });
+
+const handleModal = () => {
+    const modal = document.getElementById('successModal');
+    if (modal) {
+        modal.style.display = 'block';
+        setTimeout(() => {
+            modal.style.display = 'none';
+            window.location.href = '/src/pages/store/home/home.html';
+        }, 3000);
+    }
+}

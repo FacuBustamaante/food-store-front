@@ -1,9 +1,12 @@
 const cart = JSON.parse(localStorage.getItem('cart') || '[]');
 
-const API = 'http://localhost:8081/api'
+const API = import.meta.env.VITE_API_URL;
 
 export const createOrder = async () => {
-    console.log(cart)
+    if(!cart || !cart.detalles || cart.detalles.length === 0) {
+        console.error('El carrito está vacío o no es válido');
+        return;
+    }
     const mappedDetalles = cart.detalles.map((item: any) => ({
         productoId: item.id || item.productoId,
         cantidad: item.cantidad
@@ -14,6 +17,7 @@ export const createOrder = async () => {
         fecha: cart.fecha,
         detalles: mappedDetalles,
     };
+    console.log(orderPayload)
     const response = await fetch(`${API}/pedidos`, {
         method: 'POST',
         headers: {
@@ -24,7 +28,6 @@ export const createOrder = async () => {
 
     if (response.ok) {
         const order = await response.json();
-        alert('Compra realizada con éxito:');
         console.log('Pedido creado exitosamente', order)
     } else {
         console.error('Error al crear el pedido');

@@ -149,6 +149,7 @@ sortSelect?.addEventListener('change', () => {
 //Agregar al carrito
 productContainer?.addEventListener('click', (event) => {
     const target = event.target as HTMLElement;
+    handleModal();
     if (target.classList.contains('card-btn')) {
         const productCard = target.closest('.product-card');
         if (productCard) {
@@ -161,3 +162,12 @@ productContainer?.addEventListener('click', (event) => {
     }
 });
 
+const handleModal = () => {
+    const modal = document.getElementById('successModal');
+    if (modal) {
+        modal.style.display = 'block';
+        setTimeout(() => {
+            modal.style.display = 'none';
+        }, 2000);
+    }
+}

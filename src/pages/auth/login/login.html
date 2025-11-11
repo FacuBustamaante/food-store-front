@@ -6,7 +6,7 @@
     <title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/pages/auth/login/login.css">
-        <link
+    <link
         href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=BBH+Sans+Hegarty&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
         rel="stylesheet">
     <style>
@@ -15,16 +15,24 @@
 </head>
 
 <body>
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <h2>¡Login exitoso!</h2>
+            <p>Serás redirigido en un momento...</p>
+        </div>
+    </div>
     <div class="header">
         <div class="header-content">
             <h1 class="archivo-black-regular">Food Store Project</h1>
-            <h3 >Proyecto Global Programación III</h3>
+            <h3>Proyecto Global Programación III</h3>
             <p>Facundo Bustamante</p>
             <p>Lucas Russo</p>
             <p>Ignacio Odorico</p>
             <div>
-                <button class="btn"><a class="repo-links" href="https://github.com/FacuBustamaante/food-store-front">Ir al Repositorio (Front)</a></button>
-                <button class="btn"><a class="repo-links" href="https://github.com/RussoLucas-Lab/food-backend">Ir al Repositorio (Back)</a></button>
+                <button class="btn"><a class="repo-links" href="https://github.com/FacuBustamaante/food-store-front">Ir
+                        al Repositorio (Front)</a></button>
+                <button class="btn"><a class="repo-links" href="https://github.com/RussoLucas-Lab/food-backend">Ir al
+                        Repositorio (Back)</a></button>
             </div>
         </div>
 
@@ -39,10 +47,10 @@
             <label for="password">Contraseña</label>
             <input type="password" required id="password" name="password" placeholder="***********"
                 style="box-sizing: border-box;">
-                
+
             </select>
             <button id="login-button" type="submit">Iniciar sesión</button>
-            <a href="/src/pages/auth/register/register.html">¿No tienes una cuenta? Regístrate aquí.</a>
+            <a class="register-link" href="/src/pages/auth/register/register.html">¿No tenés una cuenta? Registrate acá.</a>
         </form>
     </div>
     <script src="/src/pages/auth/login/login.ts" type="module"></script>

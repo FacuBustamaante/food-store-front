@@ -41,7 +41,7 @@ header {
     border-bottom: 1px solid #ccc;
 }
 
-.product-name{
+.product-name {
     font-weight: bold;
     font-size: 1.1rem;
     color: var(--text-color);
@@ -92,7 +92,7 @@ header {
     width: 20%;
 }
 
-footer{
+footer {
     text-align: center;
     padding: 3rem;
     background-color: var(--primary-color);
@@ -109,7 +109,7 @@ aside {
     height: 100vh;
 }
 
-.product-description{
+.product-description {
     flex-grow: .5;
     margin-bottom: 10px;
     color: #606060;
@@ -171,7 +171,7 @@ li {
     cursor: pointer;
 }
 
-a{
+a {
     text-decoration: none;
     color: inherit;
 }
@@ -187,4 +187,34 @@ a{
     font-weight: bold;
     margin-bottom: .5rem;
     display: block;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* 2. Contenido del Modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.modal-content h3 {
+    color: #4CAF50;
+    margin-bottom: 1rem;
 }
